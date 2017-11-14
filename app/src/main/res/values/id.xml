@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Catalog Activity
+      -->
+    <item name="catalog_dropdown_linlay" type="id" />
+    <item name="catalog_list_view" type="id" />
+    <item name="catalog_empty_linlay" type="id" />
+
+    <item name="catalog_add_fab" type="id" />
+
+    <!--
+       Details Activity
+     -->
+    <item name="details_circ_image" type="id" />
+    <item name="details_text_name" type="id" />
+    <item name="details_text_brand" type="id" />
+    <item name="details_text_price" type="id" />
+    <item name="details_text_discount" type="id" />
+    <item name="details_text_stock" type="id" />
+    <item name="details_text_supp_name" type="id" />
+    <item name="details_text_supp_mail" type="id" />
+    <item name="details_text_supp_phone" type="id" />
+    <item name="details_img_incr" type="id" />
+    <item name="details_img_decr" type="id" />
+
+    <!--
+       Editor Activity
+     -->
+    <item name="editor_circ_img" type="id" />
+    <item name="editor_empty_pic_text" type="id" />
+    <item name="editor_edt_name" type="id" />
+    <item name="editor_edt_brand" type="id" />
+    <item name="editor_edt_price" type="id" />
+    <item name="editor_cb_discount" type="id" />
+    <item name="editor_spinner_discount" type="id" />
+    <item name="editor_edt_stock" type="id" />
+
+    <item name="editor_edt_supp_name" type="id" />
+    <item name="editor_edt_supp_mail" type="id" />
+    <item name="editor_edt_supp_phone" type="id" />
+
+    <!--
+       List item
+     -->
+    <item name="list_item_name_text" type="id" />
+    <item name="list_item_price_text" type="id" />
+    <item name="list_item_quantity_text" type="id" />
+    <item name="list_item_sold_btn" type="id" />
+
+    <!--
+       Menu
+     -->
+    <item name="menu_item_save" type="id" />
+    <item name="menu_item_delete" type="id" />
+    <item name="menu_item_update" type="id" />
+
+</resources>

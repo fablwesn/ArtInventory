@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Default values for margin/padding/space/etc.
+     -->
+    <dimen name="space_tiny">2dp</dimen>
+    <dimen name="space_small">4dp</dimen>
+    <dimen name="space_medium">8dp</dimen>
+    <dimen name="space_large">16dp</dimen>
+    <dimen name="space_huge">32dp</dimen>
+
+    <!--
+        Catalog Activity
+      -->
+    <!-- FAB margin inside the HomeActivity -->
+    <dimen name="catalog_fab_margin">16dp</dimen>
+    <!-- TextSize of the list#s empty view -->
+    <dimen name="catalog_empty_list_text_sp">20sp</dimen>
+    <!-- Width and height of the decrease stock button inside each list item -->
+    <dimen name="list_item_btn_size">64dp</dimen>
+
+    <!--
+       Details Activity
+     -->
+    <!-- Product's ImageView width and height. also used inside the EditorActivity -->
+    <dimen name="product_img_size">126dp</dimen>
+    <!-- Header text size -->
+    <dimen name="details_header_text">17sp</dimen>
+    <!-- Body text size -->
+    <dimen name="details_body_text">15sp</dimen>
+    <!-- Supplier info text size -->
+    <dimen name="details_supp_name_text">20sp</dimen>
+
+    <!--
+       Editor Activity
+     -->
+
+    <!-- Header text size -->
+    <dimen name="editor_section_header_text_sp">18sp</dimen>
+    <!-- Input text size -->
+    <dimen name="editor_edit_text_sp">16sp</dimen>
+    <!-- Spinner text size -->
+    <dimen name="editor_cb_spinner_sp">14sp</dimen>
+
+</resources>

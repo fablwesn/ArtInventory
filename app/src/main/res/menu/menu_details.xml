@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+    Displays a button to delete and one to edit the selected entry
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Delete entry action -->
+    <item
+        android:id="@id/menu_item_delete"
+        android:icon="@drawable/ic_action_remove"
+        android:orderInCategory="100"
+        android:title="@string/editor_menu_action_delete"
+        app:showAsAction="ifRoom" />
+
+
+    <!-- edit entry action -->
+    <item
+        android:id="@id/menu_item_update"
+        android:icon="@drawable/ic_action_edit"
+        android:orderInCategory="99"
+        android:title="@string/editor_menu_action_update"
+        app:showAsAction="ifRoom" />
+
+</menu>

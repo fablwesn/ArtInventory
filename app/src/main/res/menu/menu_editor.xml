@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+    Displays a button to save and a button do delete the selected entry
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".EditorActivity">
+
+    <!-- Save entry action -->
+    <item
+        android:id="@id/menu_item_save"
+        android:icon="@drawable/ic_action_accept"
+        android:title="@string/editor_menu_action_save"
+        app:showAsAction="ifRoom" />
+
+    <!-- Delete entry action -->
+    <item
+        android:id="@id/menu_item_delete"
+        android:icon="@drawable/ic_action_remove"
+        android:title="@string/editor_menu_action_delete"
+        app:showAsAction="ifRoom" />
+
+</menu>

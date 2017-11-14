@@ -1,0 +1,118 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Splash activity theme, displays a background instead of a layout -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <!-- List's empty view image -->
+    <style name="CircularImageEmptyCatalog">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/space_huge</item>
+        <item name="android:layout_marginBottom">@dimen/space_large</item>
+        <item name="android:layout_marginRight">@dimen/space_large</item>
+        <item name="android:layout_marginLeft">@dimen/space_large</item>
+        <item name="android:src">@drawable/img_empty_list_bg</item>
+    </style>
+
+    <!-- List's empty view text -->
+    <style name="TextEmptyCatalog">
+        <item name="android:gravity">center|top</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:text">@string/catalog_empty_text_hint</item>
+        <item name="android:textSize">@dimen/catalog_empty_list_text_sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">cursive</item>
+    </style>
+
+    <!-- vertical line used for styling the section headers -->
+    <style name="ViewLineStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/space_tiny</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- Section header text -->
+    <style name="SectionTitleText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/space_medium</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/editor_section_header_text_sp</item>
+    </style>
+
+    <!-- EditText input when adding/changing an entry -->
+    <style name="EditTextInput">
+        <item name="android:textSize">@dimen/editor_edit_text_sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_marginTop">@dimen/space_small</item>
+        <item name="android:layout_marginBottom">@dimen/space_small</item>
+        <item name="android:layout_marginLeft">@dimen/space_large</item>
+        <item name="android:layout_marginRight">@dimen/space_large</item>
+    </style>
+
+    <!-- Discount selection-spinner for the product -->
+    <style name="EditorCheckBoxSpinner">
+        <item name="android:textSize">@dimen/editor_cb_spinner_sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <!-- Header text for the detailed view -->
+    <style name="DetailsHeaderText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/details_header_text</item>
+    </style>
+
+    <!-- Body text for the detailed view -->
+    <style name="DetailsBodyText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/details_body_text</item>
+    </style>
+
+    <!-- Big supplier text for the detailed view -->
+    <style name="DetailsSupplierTextLarge">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/details_supp_name_text</item>
+        <item name="android:layout_marginLeft">@dimen/space_small</item>
+        <item name="android:layout_marginRight">@dimen/space_small</item>
+        <item name="android:layout_marginTop">@dimen/space_large</item>
+        <item name="android:layout_marginBottom">@dimen/space_medium</item>
+        <item name="android:paddingLeft">@dimen/space_large</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- Header text for the detailed view -->
+    <style name="DetailsSupplierText" parent="DetailsSupplierTextLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/details_header_text</item>
+        <item name="android:layout_margin">@dimen/space_small</item>
+    </style>
+</resources>

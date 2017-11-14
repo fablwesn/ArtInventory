@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+    Single ListItem-Layout
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_small"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="@dimen/space_medium"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:contentPadding="@dimen/space_large">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Product's name text -->
+            <TextView
+                android:id="@id/list_item_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/space_medium"
+                android:layout_marginTop="@dimen/space_medium"
+                android:layout_toLeftOf="@id/list_item_quantity_text"
+                android:layout_toStartOf="@id/list_item_quantity_text"
+                android:fontFamily="monospace"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/primary_text_light"
+                android:textStyle="bold" />
+
+            <!-- Product's price text -->
+            <TextView
+                android:id="@id/list_item_price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/list_item_name_text"
+                android:layout_toLeftOf="@id/list_item_quantity_text"
+                android:layout_toStartOf="@id/list_item_quantity_text"
+                android:fontFamily="monospace"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <!-- Product's quantity text -->
+            <TextView
+                android:id="@id/list_item_quantity_text"
+                android:layout_width="@dimen/list_item_btn_size"
+                android:layout_height="@dimen/list_item_btn_size"
+                android:layout_toLeftOf="@id/list_item_sold_btn"
+                android:layout_toStartOf="@id/list_item_sold_btn"
+                android:background="@drawable/list_stock_border"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/primary_text_light" />
+
+            <!-- decrease stock button -->
+            <ImageButton
+                android:id="@id/list_item_sold_btn"
+                android:layout_width="@dimen/list_item_btn_size"
+                android:layout_height="@dimen/list_item_btn_size"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/list_btn_border"
+                android:scaleX="-1"
+                android:src="@drawable/ic_sold_56dp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

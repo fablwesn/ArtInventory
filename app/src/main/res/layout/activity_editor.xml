@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+    Editor-Activity, adding or changing data of an entry.
+    If editing, also able to delete entry
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ScrollView Parent so everything stays visible and editable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.fablwesn.www.artinventory.EditorActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/space_large">
+
+            <!-- CircularImageView from library: https://github.com/hdodenhof/CircleImageView representing the product -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@id/editor_circ_img"
+                android:layout_width="@dimen/product_img_size"
+                android:layout_height="@dimen/product_img_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/space_medium"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:onClick="addImage"
+                android:src="@drawable/ic_add_photo"
+                app:civ_border_color="@color/colorPrimaryDark"
+                app:civ_border_width="@dimen/space_small" />
+
+            <!-- displayed when user attempts to save without selecting an image -->
+            <TextView
+                android:id="@id/editor_empty_pic_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/space_small"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="@string/editor_edt_empty_img"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone" />
+
+            <!-- Section-Header Layout for the product info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- A line for styling purposes -->
+                <View style="@style/ViewLineStyle" />
+
+                <!-- Section-Title -->
+                <TextView
+                    style="@style/SectionTitleText"
+                    android:text="@string/section_header_product" />
+
+                <!-- A line for styling purposes -->
+                <View style="@style/ViewLineStyle" />
+
+            </LinearLayout>
+
+            <!-- Input field for the name -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@id/editor_edt_name"
+                    style="@style/EditTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/editor_edt_hint_name"
+                    android:inputType="textCapSentences" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Input field for the brand -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@id/editor_edt_brand"
+                    style="@style/EditTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/editor_edt_hint_brand"
+                    android:inputType="textCapSentences" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Input field for the price and discount -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Price EditText -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@id/editor_edt_price"
+                        style="@style/EditTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/editor_edt_hint_price"
+                        android:inputType="numberDecimal" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Checkbox toggling a discount for the product -->
+                <CheckBox
+                    android:id="@id/editor_cb_discount"
+                    style="@style/EditorCheckBoxSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="toggleDiscount"
+                    android:text="@string/editor_cb_discount" />
+
+                <!-- If discount is available, chose here how high it is -->
+                <Spinner
+                    android:id="@id/editor_spinner_discount"
+                    style="@style/EditorCheckBoxSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/space_large"
+                    android:layout_marginLeft="@dimen/space_medium"
+                    android:layout_marginRight="@dimen/space_large"
+                    android:layout_marginStart="@dimen/space_medium"
+                    android:alpha="0.1"
+                    android:entries="@array/discount_spinner_items_array"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+            <!-- Input field for the stock quantity -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@id/editor_edt_stock"
+                    style="@style/EditTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/editor_edt_hint_stock"
+                    android:inputType="number" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Section-Header Layout for the supplier info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                android:orientation="horizontal">
+
+                <!-- A line for styling purposes -->
+                <View style="@style/ViewLineStyle" />
+
+                <!-- Section-Title -->
+                <TextView
+                    style="@style/SectionTitleText"
+                    android:text="@string/section_header_supplier" />
+
+                <!-- A line for styling purposes -->
+                <View style="@style/ViewLineStyle" />
+
+            </LinearLayout>
+
+            <!-- Input field for the supplier name -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@id/editor_edt_supp_name"
+                    style="@style/EditTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/editor_edt_hint_supp_name"
+                    android:inputType="textCapSentences" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Input field for the supplier mail -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@id/editor_edt_supp_mail"
+                    style="@style/EditTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/editor_edt_hint_supp_mail"
+                    android:inputType="textEmailAddress" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Input field for the supplier phone number -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@id/editor_edt_supp_phone"
+                    style="@style/EditTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/editor_edt_hint_supp_phone"
+                    android:inputType="phone" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

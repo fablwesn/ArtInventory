@@ -1,0 +1,104 @@
+<resources>
+    <!-- App Name [DO NOT TRANSLATE] -->
+    <string name="app_name">Art Inventory</string>
+
+    <!--
+        Activity Labels
+      -->
+    <!-- CatalogActivity's label [MAX CHARS: 30] -->
+    <string name="catalog_act_label">Zusuriki\'s Art Supplies</string>
+    <!-- DetailsActivity's label [MAX CHARS: 30] -->
+    <string name="details_act_label">Product Details</string>
+    <!-- EditorActivities' labels [MAX CHARS: 30 ] -->
+    <string name="editor_act_label_add">Add Product</string>
+    <string name="editor_act_label_edit">Edit Product</string>
+
+    <!--
+         UI Strings
+      -->
+    <!-- Displayed when there are no list items [MAX CHARS: UNLIMITED] -->
+    <string name="catalog_empty_text_hint">Press the button to add the first entry \ninto this SQLite-Database.</string>
+
+    <!-- confirmation negative option [MAX CHARS: 15] -->
+    <string name="confirmation_dialog_cancel">@android:string/cancel</string>
+
+
+    <!-- Catalog confirmation dialogs [MAX CHARS: UNLIMITED] -->
+    <string name="catalog_confirmation_delete_all">Accepting will clear the whole database.\nYou sure?</string>
+    <string name="catalog_confirmation_delete_single">Accepting will remove this product from the database.\nYou sure?</string>
+
+    <!-- Catzalog confirmation answering positive options [MAX CHARS: 15] -->
+    <string name="catalog_confirmation_delete_single_pos">DELETE PRODUCT</string>
+    <string name="catalog_confirmation_delete_all_pos">CLEAR DB</string>
+
+    <!-- Detail activity's discount string parent -->
+    <string name="details_discount">-%1$d%%&#160;</string>
+
+    <!-- Detail activity's headers -->
+    <string name="details_stock_header">in stock</string>
+    <string name="details_price_header">price per item</string>
+
+    <!-- Section header inside the editor activty [MAX CHARS: 15] -->
+    <string name="section_header_product">Product Info</string>
+    <string name="section_header_supplier">Supplier</string>
+
+    <!-- Edit hint texes for the input fields [MAX CHARS: 20] -->
+    <string name="editor_edt_hint_name">Name</string>
+    <string name="editor_edt_hint_brand">Brand</string>
+    <string name="editor_edt_hint_price">Price</string>
+    <string name="editor_cb_discount">Discount</string>
+    <string name="editor_edt_hint_stock">Stock</string>
+    <string name="editor_edt_hint_supp_name">Name</string>
+    <string name="editor_edt_hint_supp_mail">eMail address</string>
+    <string name="editor_edt_hint_supp_phone">Phone number</string>
+
+    <!-- Editor activity's error messages [MAX CHARS: 20] -->
+    <string name="editor_edt_empty_input">Required field!</string>
+    <string name="editor_edt_invalid_input">Invalid entry.</string>
+    <string name="editor_edt_empty_img">Image required</string>
+
+    <!-- Editor confirmation dialog when exiting [MAX CHARS: UNLIMITED] -->
+    <string name="editor_confirmation_dismiss_changes">Unsaved changes will be lost when leaving this screen.\nYou sure?</string>
+    <!-- Editor confirmation answering options [MAX CHARS: 15] -->
+    <string name="editor_confirmation_dismiss_changes_pos">CANCEL EDITING</string>
+    <string name="editor_confirmation_dismiss_changes_neg">STAY</string>
+
+    <!--
+         Menu strings
+      -->
+
+    <!-- Menu action titles [MAX CHARS: 15] -->
+    <string name="editor_menu_action_save">Save</string>
+    <string name="editor_menu_action_delete">Delete</string>
+    <string name="editor_menu_action_update">Update</string>
+    <string name="editor_menu_action_clear">Clear All</string>
+
+    <!--
+         Toast messages [MAX CHARS: UNLIMITED]
+      -->
+    <string name="editor_error_img_toast">There was a problem loading the image.\nPlease retry or use another image.</string>
+
+    <string name="editor_save_succeeded_toast">Product added.</string>
+    <string name="editor_save_failed_toast">Failed to add product.</string>
+
+    <string name="editor_update_succeeded_toast">Product updated.</string>
+    <string name="editor_update_failed_toast">Failed to update product.</string>
+
+    <string name="catalog_sold_success_toast">Item sold.</string>
+    <string name="catalog_sold_error_toast">Nothing left to sell.</string>
+
+    <string name="catalog_data_cleared_toast">Successfully deleted.</string>
+    <string name="catalog_data_clear_failed_toast">Deleting data failed.</string>
+
+    <!--
+         String Arrays
+      -->
+    <!-- Item to add inside the discount spinner [DO NOT TRANSLATE OR CHANGE VALUES] -->
+    <string-array name="discount_spinner_items_array">
+        <item>10%</item>
+        <item>25%</item>
+        <item>50%</item>
+        <item>75%</item>
+    </string-array>
+
+</resources>

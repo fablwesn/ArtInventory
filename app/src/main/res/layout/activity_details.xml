@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+    Details-Activity,
+    displaying all info about an entry with the possibility to delete or edit it and to increase and decrease it's stock
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ScrollView Parent so everything stays visible -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_large"
+            android:orientation="vertical">
+
+            <!-- Product Info -->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_medium"
+                app:cardBackgroundColor="@color/cardview_light_background"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation"
+                app:contentPadding="@dimen/space_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- Section-Header Layout for the product info -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- A line for styling purposes -->
+                        <View style="@style/ViewLineStyle" />
+
+                        <!-- Section-Title -->
+                        <TextView
+                            style="@style/SectionTitleText"
+                            android:text="@string/section_header_product" />
+
+                        <!-- A line for styling purposes -->
+                        <View style="@style/ViewLineStyle" />
+
+                    </LinearLayout>
+
+                    <!-- Product image -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/space_medium"
+                        android:paddingTop="@dimen/space_medium">
+
+                        <!-- left style -->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="1"
+                            android:src="@drawable/img_details_filler_left" />
+
+
+                        <!-- product image -->
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@id/details_circ_image"
+                            android:layout_width="@dimen/product_img_size"
+                            android:layout_height="@dimen/product_img_size"
+                            android:layout_gravity="center"
+                            app:civ_border_color="@color/colorPrimaryDark"
+                            app:civ_border_width="@dimen/space_medium" />
+
+                        <!-- left style -->
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="1"
+                            android:scaleX="-1"
+                            android:src="@drawable/img_details_filler_left" />
+
+                    </LinearLayout>
+
+                    <!-- Name Text -->
+                    <TextView
+                        android:id="@id/details_text_name"
+                        style="@style/DetailsHeaderText"
+                        android:layout_marginBottom="@dimen/space_small"
+                        android:layout_marginTop="@dimen/space_medium" />
+
+                    <!-- Brand Text -->
+                    <TextView
+                        android:id="@id/details_text_brand"
+                        style="@style/DetailsBodyText"
+                        android:layout_marginBottom="@dimen/space_medium"
+                        android:layout_marginTop="@dimen/space_small" />
+
+                    <!-- Price Header -->
+                    <TextView
+                        style="@style/DetailsHeaderText"
+                        android:layout_marginBottom="@dimen/space_small"
+                        android:layout_marginTop="@dimen/space_small"
+                        android:text="@string/details_price_header" />
+
+                    <!-- Price and Discount Text -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Price -->
+                        <TextView
+                            android:id="@id/details_text_price"
+                            style="@style/DetailsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_marginBottom="@dimen/space_medium"
+                            android:layout_marginTop="@dimen/space_small"
+                            android:layout_weight="2" />
+
+                        <!-- Discount -->
+                        <TextView
+                            android:id="@id/details_text_discount"
+                            style="@style/DetailsBodyText"
+                            android:layout_width="0dp"
+                            android:layout_marginBottom="@dimen/space_medium"
+                            android:layout_marginTop="@dimen/space_small"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:textColor="@color/colorDiscountText" />
+
+                    </LinearLayout>
+
+                    <!-- Stock Header -->
+                    <TextView
+                        style="@style/DetailsHeaderText"
+                        android:layout_marginTop="@dimen/space_small"
+                        android:text="@string/details_stock_header" />
+
+                    <!-- Stock Text with buttons to increase and decrease it -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/space_medium"
+                        android:paddingTop="@dimen/space_medium">
+
+                        <!-- decrease stock -->
+                        <ImageView
+                            android:id="@id/details_img_decr"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="editStock"
+                            android:src="@drawable/ic_decrement_stock" />
+
+                        <!-- stock text -->
+                        <TextView
+                            android:id="@id/details_text_stock"
+                            style="@style/EditTextInput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <!-- increase stock -->
+                        <ImageView
+                            android:id="@id/details_img_incr"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="editStock"
+                            android:scaleX="-1"
+                            android:src="@drawable/ic_increment_stock" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Supplier Info -->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_medium"
+                app:cardBackgroundColor="@color/cardview_light_background"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="@dimen/cardview_default_elevation"
+                app:contentPadding="@dimen/space_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- Section-Header Layout for the supplier info -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- A line for styling purposes -->
+                        <View style="@style/ViewLineStyle" />
+
+                        <!-- Section-Title -->
+                        <TextView
+                            style="@style/SectionTitleText"
+                            android:text="@string/section_header_supplier" />
+
+                        <!-- A line for styling purposes -->
+                        <View style="@style/ViewLineStyle" />
+
+                    </LinearLayout>
+
+                    <!-- Supplier's name text -->
+                    <TextView
+                        android:id="@id/details_text_supp_name"
+                        style="@style/DetailsSupplierTextLarge" />
+
+                    <!-- Supplier's mail text and button -->
+                    <TextView
+                        android:id="@id/details_text_supp_mail"
+                        style="@style/DetailsSupplierText"
+                        android:drawableEnd="@drawable/ic_compose_mail"
+                        android:drawableRight="@drawable/ic_compose_mail"
+                        android:onClick="mailSupplier" />
+
+                    <!-- Supplier's phone text and button -->
+                    <TextView
+                        android:id="@id/details_text_supp_phone"
+                        style="@style/DetailsSupplierText"
+                        android:drawableEnd="@drawable/ic_phone_call"
+                        android:drawableRight="@drawable/ic_phone_call"
+                        android:onClick="callSupplier" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

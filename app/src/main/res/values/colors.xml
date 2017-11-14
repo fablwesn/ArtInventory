@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary theme colors -->
+    <color name="colorPrimary">#616161</color>
+    <color name="colorPrimaryDark">#424242</color>
+    <color name="colorAccent">#212121</color>
+    <color name="colorSplashBg">#5b585d</color>
+
+    <!-- Primary theme text colors -->
+    <color name="colorDiscountText">#2E7D32</color>
+</resources>
